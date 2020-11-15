@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-top: ($base-unit * 4);
+  padding-right: ($base-unit * 4);
+  padding-bottom: ($base-unit * 4);
+  padding-left: ($base-unit * 4);
+  min-height: ($base-unit * 18);
+  border-radius: ($base-unit * 2);
+  background-color: $color-card;
+  @include grid-breakpoint(sm) {
+    justify-content: space-between;
+  }
+
+  &__title {
+    $font-size: ($base-unit * 6);
+    margin-top: 0;
+    margin-bottom: ($base-unit * 2);
+    width: 100%;
+    color: $color-text-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    font-style: normal;
+    font-size: $font-size - 4;
+    font-family: 'Roboto', sans-serif;
+    line-height: ($base-unit * 9 / $font-size * 1em);
+    @include grid-breakpoint(sm) {
+      margin-bottom: 0;
+      width: auto;
+      font-size: $font-size - 3;
+    }
+    @include grid-breakpoint(md) {
+      letter-spacing: 0.04em;
+      font-size: $font-size - 2;
+    }
+    @include grid-breakpoint(lg) {
+      font-size: $font-size - 1;
+    }
+    @include grid-breakpoint(xl) {
+      font-size: $font-size;
+    }
+  }
+}

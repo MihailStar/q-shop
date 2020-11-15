@@ -1,0 +1,115 @@
+.card {
+  border-radius: ($base-unit * 2);
+  background-color: $color-card;
+
+  &__image-wrapper {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    height: ($base-unit * 67);
+    border-radius: ($base-unit * 2) ($base-unit * 2) 0 0;
+    box-shadow: 0 1px 0 0 $color-line;
+  }
+
+  &__image {
+    height: ($base-unit * 67);
+    vertical-align: middle;
+  }
+
+  &__description-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: ($base-unit * 4);
+    padding-right: ($base-unit * 4);
+    padding-bottom: ($base-unit * 4);
+    padding-left: ($base-unit * 4);
+    box-shadow: 0 1px 0 0 $color-line;
+  }
+
+  &__title {
+    $font-size: ($base-unit * 5);
+    margin-top: 0;
+    margin-bottom: ($base-unit * 1);
+    color: $color-text-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    font-style: normal;
+    font-size: $font-size - 1;
+    font-family: 'Roboto', sans-serif;
+    line-height: ($base-unit * 8 / $font-size * 1em);
+    @include grid-breakpoint(md) {
+      font-size: $font-size;
+    }
+  }
+
+  &__description {
+    $font-size: ($base-unit * 4);
+    $line-height: ($base-unit * 6 / $font-size * 1em);
+    $number-of-lines: 5;
+    margin-top: 0;
+    margin-bottom: ($base-unit * 4);
+    color: $color-text-dark;
+    font-weight: 300;
+    font-style: normal;
+    font-size: $font-size;
+    font-family: 'Roboto', sans-serif;
+    line-height: $line-height;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  &__price {
+    $font-size: ($base-unit * 4 + 2);
+    margin-right: ($base-unit * 2);
+    color: $color-text-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    font-style: normal;
+    font-size: $font-size;
+    font-family: 'Roboto', sans-serif;
+    line-height: ($base-unit * 6 / $font-size * 1em);
+  }
+
+  &__old-price {
+    $font-size: ($base-unit * 4);
+    color: $color-text-dark;
+    text-decoration: line-through;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+    font-style: normal;
+    font-size: $font-size;
+    font-family: 'Roboto', sans-serif;
+    line-height: ($base-unit * 6 / $font-size * 1em);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: ($base-unit * 4);
+    padding-right: ($base-unit * 4);
+    padding-bottom: ($base-unit * 4);
+    padding-left: ($base-unit * 4);
+  }
+
+  &__total {
+    $font-size: ($base-unit * 5);
+    color: $color-text-dark;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: normal;
+    font-size: $font-size;
+    font-family: 'Roboto', sans-serif;
+    line-height: ($base-unit * 7 / $font-size * 1em);
+  }
+}

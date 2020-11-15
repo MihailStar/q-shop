@@ -1,0 +1,11 @@
+{
+  "extends": "stylelint-config-recommended-scss",
+  "rules": {
+    "color-hex-length": "long",
+    "declaration-property-value-blacklist": {
+      "/^border/": ["none"],
+      "/^outline/": ["none"],
+    },
+    "length-zero-no-unit": true
+  }
+}

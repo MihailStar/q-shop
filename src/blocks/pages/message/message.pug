@@ -1,0 +1,16 @@
+mixin message(modifiers = [])
+  -
+    const mainClass = 'message';
+    const classes = [...getClasses(mainClass, modifiers), `js-page-${mainClass}`];
+
+  section(class=classes, hidden)&attributes(attributes)
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          div(class=`${mainClass}__background`)
+            div(class=`${mainClass}__content-wrapper`)
+              h2(class=`${mainClass}__title`) Заказ успешно отправлен
+              p(class=`${mainClass}__text`).
+                В течении суток мы отправим вам данные для перевода.
+                <br>
+                Пожалуйста, проверяйте папку спам в электронном ящике, чтобы не пропустить наше письмо

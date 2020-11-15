@@ -1,0 +1,34 @@
+.input {
+  $font-size: ($base-unit * 4);
+  padding-top: ($base-unit * 2);
+  padding-right: ($base-unit * 4);
+  padding-bottom: ($base-unit * 2);
+  padding-left: ($base-unit * 4);
+  width: 100%;
+  height: ($base-unit * 10);
+  border: 0;
+  border-radius: ($base-unit * 1);
+  background-color: $color-body;
+  box-shadow: inset 0 0 0 1px $color-line;
+  color: $color-text-dark;
+  vertical-align: middle;
+  font-weight: 300;
+  font-style: normal;
+  font-size: $font-size;
+  font-family: 'Roboto', sans-serif;
+  line-height: ($base-unit * 6 / $font-size * 1em);
+  transition: background-color $transition-duration, color $transition-duration;
+
+  &::placeholder {
+    color: lighten($color-text-dark, 8%);
+  }
+
+  &:focus {
+    outline: 0;
+    background-color: $color-card;
+  }
+
+  &_hidden {
+    display: none;
+  }
+}

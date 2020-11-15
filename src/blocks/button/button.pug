@@ -1,0 +1,39 @@
+//- @param {string} title
+//- @param {Array<string>} [modifiers]
+//- @example +button('Example')(href='javascript:void(0);')
+//- @example +button('Example', ['example'])(href='javascript:void(0);')
+//- @example +button('Example')(type='button')
+//- @example +button('Example', ['example'])(type='button')
+mixin button(title, modifiers = [])
+  -
+    const mainClass = 'button';
+    const classes = getClasses(mainClass, modifiers);
+
+  if attributes.href
+    a(class=classes)&attributes(attributes)
+      if modifiers.includes('icon')
+        span.visually-hidden= title
+        block
+      else if modifiers.includes('with-icon-left')
+        block
+        span= title
+      else if modifiers.includes('with-icon-right')
+        span= title
+        block
+      else
+        span= title
+        block
+  else
+    button(class=classes)&attributes(attributes)
+      if modifiers.includes('icon')
+        span.visually-hidden= title
+        block
+      else if modifiers.includes('with-icon-left')
+        block
+        span= title
+      else if modifiers.includes('with-icon-right')
+        span= title
+        block
+      else
+        span= title
+        block

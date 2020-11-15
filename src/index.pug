@@ -1,0 +1,19 @@
+extends ./templates/main.pug
+
+block variables
+  -
+    const documentLanguage = 'ru';
+    const bodyClasses = '';
+    const pageDescription = '';
+    const pageKeywords = '';
+    const pageTitle = 'Q shop';
+
+block head
+
+block body
+  .q-shop
+    +goods()
+    +order(hidden)
+    +terms(hidden)
+    +message(hidden)
+    +sprite(hidden)

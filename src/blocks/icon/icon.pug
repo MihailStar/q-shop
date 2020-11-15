@@ -1,0 +1,11 @@
+//- @param {string} name
+//- @param {Array<string>} [modifiers]
+//- @example +icon('example')(width='24' height='24')
+//- @example +icon('example', ['example'])(width='24' height='24')
+mixin icon(name, modifiers = [])
+  -
+    const mainClass = 'icon';
+    const classes = getClasses(mainClass, [name, ...modifiers]);
+
+  svg(class=classes, aria-hidden='true', focusable='false')&attributes(attributes)
+    use(xlink:href=`#icon-${name}`)/

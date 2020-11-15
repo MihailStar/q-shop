@@ -1,0 +1,50 @@
+.goods {
+  padding-top: ($base-unit * 7);
+  padding-bottom: ($base-unit * 7);
+  min-height: 100vh;
+  background-color: $color-body;
+
+  &__column {
+    &_12 {
+      @include grid-col(12);
+    }
+  }
+
+  &__header {
+    margin-bottom: ($base-unit * 4);
+  }
+
+  &__cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: -($base-unit * 4);
+    @include grid-breakpoint(md) {
+      margin-bottom: -($base-unit * 6);
+    }
+    @include grid-breakpoint(lg) {
+      margin-bottom: -($base-unit * 7);
+    }
+  }
+
+  &__card {
+    margin-bottom: ($base-unit * 4);
+    width: 100%;
+    @include grid-breakpoint(sm) {
+      margin-bottom: ($base-unit * 5);
+      width: calc((100% - #{$base-unit * 5 * 1}) / 2);
+    }
+    @include grid-breakpoint(md) {
+      margin-bottom: ($base-unit * 6);
+      width: calc((100% - #{$base-unit * 6 * 1}) / 2);
+    }
+    @include grid-breakpoint(lg) {
+      margin-bottom: ($base-unit * 7);
+      width: calc((100% - #{$base-unit * 7 * 2}) / 3);
+    }
+  }
+
+  &__footer {
+    margin-top: ($base-unit * 4);
+  }
+}

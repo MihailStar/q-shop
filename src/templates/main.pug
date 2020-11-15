@@ -1,0 +1,33 @@
+include ./utilities.pug
+include ../blocks/button/button.pug
+include ../blocks/card/card.pug
+include ../blocks/counter/counter.pug
+include ../blocks/icon/icon.pug
+include ../blocks/pages/goods/goods.pug
+include ../blocks/pages/message/message.pug
+include ../blocks/pages/order/order.pug
+include ../blocks/pages/terms/terms.pug
+include ../blocks/sprite/sprite.pug
+
+block variables
+
+doctype html
+html(lang=documentLanguage || void 0)
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='description', content=pageDescription)
+    meta(name='keywords', content=pageKeywords)
+    meta(name='format-detection', content='email=no')
+    meta(name='format-detection', content='telephone=no')
+    meta(
+      name='viewport',
+      content='width=device-width, initial-scale=1, shrink-to-fit=no'
+    )
+    block head
+    link(href='./styles/main.css', rel='stylesheet')
+    title= pageTitle
+
+  body(class=bodyClasses)
+    block body
+    script(src='./scripts/main.js', defer)

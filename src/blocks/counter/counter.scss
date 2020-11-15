@@ -1,0 +1,41 @@
+.counter {
+  display: flex;
+
+  &__input {
+    $font-size: ($base-unit * 4);
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: ($base-unit * 10);
+    height: ($base-unit * 10);
+    border-top: 1px solid $color-line;
+    border-right: 0;
+    border-bottom: 1px solid $color-line;
+    border-left: 0;
+    border-radius: 0;
+    background-color: $color-body;
+    color: $color-text-dark;
+    text-align: center;
+    font-weight: 300;
+    font-style: normal;
+    font-size: $font-size;
+    font-family: 'Roboto', sans-serif;
+    line-height: ($base-unit * 6 / $font-size * 1em);
+    transition: background-color $transition-duration;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    // @tutorial https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      outline: 0;
+      background-color: $color-card;
+    }
+  }
+}

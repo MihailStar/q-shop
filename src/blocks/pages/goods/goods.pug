@@ -1,0 +1,110 @@
+mixin goods(modifiers = [])
+  -
+    const mainClass = 'goods';
+    const classes = [...getClasses(mainClass, modifiers), `js-page-${mainClass}`];
+    const goods = [
+      {
+        id: getRandomId(),
+        title: 'OneQ White',
+        description:
+          'Равным образом укрепление и развитие структуры позволяет оценить значение существенных финансовых и административных условий. Разнообразный и богатый опыт сложившаяся структура организации требуют определения и уточнения направлений прогрессивного развития',
+        images: [
+          './images/content/oneq-white.jpg',
+          './images/content/oneq-white@2x.jpg'
+        ],
+        price: '2750',
+        oldPrice: '3250'
+      },
+      {
+        id: getRandomId(),
+        title: 'OneQ Blue',
+        description:
+          'Равным образом дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке новых предложений. Равным образом дальнейшее развитие различных форм деятельности позволяет выполнять важные задания',
+        images: [
+          './images/content/oneq-blue.jpg',
+          './images/content/oneq-blue@2x.jpg'
+        ],
+        price: '5550',
+        oldPrice: '6500'
+      },
+      {
+        id: getRandomId(),
+        title: 'OneQ Худи (размер M)',
+        description:
+          'Равным образом укрепление и развитие структуры позволяет оценить значение существенных финансовых и административных условий. Разнообразный и богатый опыт сложившаяся структура организации требуют определения и уточнения направлений прогрессивного развития',
+        images: [
+          './images/content/oneq-hoodie-m.jpg',
+          './images/content/oneq-hoodie-m@2x.jpg'
+        ],
+        price: '4000',
+        oldPrice: ''
+      },
+      {
+        id: getRandomId(),
+        title: 'OneQ Худи (размер L)',
+        description:
+          'Равным образом дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке новых предложений. Равным образом дальнейшее развитие различных форм деятельности позволяет выполнять важные задания',
+        images: [
+          './images/content/oneq-hoodie-l.jpg',
+          './images/content/oneq-hoodie-l@2x.jpg'
+        ],
+        price: '4000',
+        oldPrice: ''
+      },
+      {
+        id: getRandomId(),
+        title: 'OneQ Худи (размер XL)',
+        description:
+          'Равным образом укрепление и развитие структуры позволяет оценить значение существенных финансовых и административных условий. Разнообразный и богатый опыт сложившаяся структура организации требуют определения и уточнения направлений прогрессивного развития',
+        images: [
+          './images/content/oneq-hoodie-xl.jpg',
+          './images/content/oneq-hoodie-xl@2x.jpg'
+        ],
+        price: '4000',
+        oldPrice: ''
+      },
+      {
+        id: getRandomId(),
+        title: 'OneQ Худи (размер XXL)',
+        description:
+          'Равным образом дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке новых предложений. Равным образом дальнейшее развитие различных форм деятельности позволяет выполнять важные задания',
+        images: [
+          './images/content/oneq-hoodie-xxl.jpg',
+          './images/content/oneq-hoodie-xxl@2x.jpg'
+        ],
+        price: '4000',
+        oldPrice: ''
+      },
+    ];
+
+  section(class=classes)&attributes(attributes)
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          header.header(class=`${mainClass}__header`)
+            h2.header__title Товары
+            +button('К оформлению', ['with-icon-left', 'disabled']).js-goods-button.js-page-switch(
+              href='javascript:void(0);',
+              tabindex='-1',
+              data-page-target='.js-page-order'
+            )
+              +icon('arrow-right')(width='8', height='14')
+
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          div(class=`${mainClass}__cards-wrapper`)
+            each item in goods
+              +card(item)(class=`${mainClass}__card`)
+
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          footer.footer(class=`${mainClass}__footer`)
+            .footer__content-wrapper
+              strong.footer__total.js-goods-total —
+            +button('Перейти к оформлению заказа', ['primary', 'disabled']).js-goods-button.js-page-switch(
+              href='javascript:void(0);',
+              tabindex='-1',
+              data-page-target='.js-page-order'
+            )

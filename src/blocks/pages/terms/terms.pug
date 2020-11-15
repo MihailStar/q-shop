@@ -1,0 +1,41 @@
+mixin terms(modifiers = [])
+  -
+    const mainClass = 'terms';
+    const classes = [...getClasses(mainClass, modifiers), `js-page-${mainClass}`];
+    const ids = Array.from({ length: 6 }, () => getRandomId());
+
+  section(class=classes, hidden)&attributes(attributes)
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          header.header(class=`${mainClass}__header`)
+            h2.header__title Условия
+            +button('К оформлению', ['with-icon-left']).js-page-switch(
+              href='javascript:void(0);',
+              data-page-target='.js-page-order'
+            )
+              +icon('arrow-left')(width='8', height='14')
+
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          ul(class=`${mainClass}__list`)
+            li(class=`${mainClass}__item`) Мы не несем ответственность за качество работы транспортных компаний. После получения трек кода - вопросы по доставке направляйте в выбранную ТК.
+            li(class=`${mainClass}__item`) Внимательно проверяйте данные, указанные для доставки (копия будет отправлена вам на почту). В случае указания неправильных данных - свяжитесь с нами ответным письмом.
+            li(class=`${mainClass}__item`) Обмен и возврат продукции не осуществляется.
+            li(class=`${mainClass}__item`) Все статьи и информация о продукции, предоставляемые на этом сайте, предназначены только для информационных и образовательных целей.
+            li(class=`${mainClass}__item`) Продукты, предлагаемые на этом сайте, не предназначены для потребления человеком или животными.
+            li(class=`${mainClass}__item`) Вы должны быть старше 21 года, чтобы использовать данный сайт.
+            li(class=`${mainClass}__item`) Предлагаемая нами продукция предназначена только для лабораторных исследований In vitro. Продукты предоставляемые на сайте не для использования человеком.
+            li(class=`${mainClass}__item`) Продукты, предлагаемые на этом сайте, НЕ ПРЕДНАЗНАЧЕНЫ ДЛЯ ДИАГНОСТИКИ, ЛЕЧЕНИЯ, СНИЖЕНИЯ ПОСЛЕДСТВИЙ, ЛЕЧЕНИЯ И ПРЕДОТВРАЩЕНИЯ ЗАБОЛЕВАНИЙ.
+            li(class=`${mainClass}__item`) Приобретая любой из этих продуктов, клиент признает риски нецелевого использования продуктов для лабораторных исследований in vitro и in vivo на модельных организмах
+
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          footer.footer(class=`${mainClass}__footer`)
+            +button('Вернуться к оформлению заказа', ['primary']).js-page-switch(
+              class=`${mainClass}__button`,
+              href='javascript:void(0);',
+              data-page-target='.js-page-order'
+            )

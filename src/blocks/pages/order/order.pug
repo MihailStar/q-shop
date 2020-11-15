@@ -1,0 +1,214 @@
+mixin order(modifiers = [])
+  -
+    const mainClass = 'order';
+    const classes = [...getClasses(mainClass, modifiers), `js-page-${mainClass}`];
+    const ids = Array.from({ length: 6 }, () => getRandomId());
+
+  section(class=classes, hidden)&attributes(attributes)
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          header.header(class=`${mainClass}__header`)
+            h2.header__title Оформление
+            +button('К товарам', ['with-icon-left']).js-page-switch(
+              href='javascript:void(0);',
+              data-page-target='.js-page-goods'
+            )
+              +icon('arrow-left')(width='8', height='14')
+
+    .grid
+      form(
+        class=`${mainClass}__form`,
+        id=`${mainClass}-form`,
+        action='/',
+        method='post'
+      )
+        fieldset(class=`${mainClass}__fieldset`)
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_12`)
+              h3(class=`${mainClass}__title`) Контактная информация
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_4`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_left`
+              )
+                input.input(name='first-name', placeholder='Имя', type='text')
+            div(class=`${mainClass}__column ${mainClass}__column_4`)
+              div(class=`${mainClass}__input-wrapper`)
+                input.input(name='last-name', placeholder='Фамилия', type='text')
+            div(class=`${mainClass}__column ${mainClass}__column_4`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_right`
+              )
+                input.input(name='middle-name', placeholder='Отчество', type='text')
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_left`
+              )
+                input.input(name='tel', placeholder='Номер телефона', type='tel')
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_right`
+              )
+                input.input(
+                  name='email',
+                  placeholder='Электронная почта',
+                  type='email'
+                )
+
+        fieldset(class=`${mainClass}__fieldset`)
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_12`)
+              h3(class=`${mainClass}__title`) Адрес доставки
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_left`
+              )
+                input.input(name='country', placeholder='Страна', type='text')
+            div(class=`${mainClass}__column ${mainClass}__column_2`)
+              div(class=`${mainClass}__input-wrapper`)
+                input.input(name='house', placeholder='Дом', type='text')
+            div(class=`${mainClass}__column ${mainClass}__column_2`)
+              div(class=`${mainClass}__input-wrapper`)
+                input.input(name='case', placeholder='Корпус', type='text')
+            div(class=`${mainClass}__column ${mainClass}__column_2`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_right`
+              )
+                input.input(name='apartment', placeholder='Квартира', type='text')
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_left`
+              )
+                input.input(
+                  name='locality',
+                  placeholder='Населенный пункт',
+                  type='text'
+                )
+            div(class=`${mainClass}__column ${mainClass}__column_3`)
+              div(class=`${mainClass}__input-wrapper`)
+                input.input(name='street', placeholder='Улица', type='text')
+            div(class=`${mainClass}__column ${mainClass}__column_3`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_right`
+              )
+                input.input(name='index', placeholder='Индекс', type='text')
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_left`
+              )
+                input.checkbox.js-demand-switch(
+                  id=ids[0],
+                  name='demand',
+                  type='checkbox'
+                )
+                label.label(for=ids[0]) Посылка до востребования
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_right`
+              )
+                input.input.input_hidden.js-demand-target(
+                  name='mailbox',
+                  placeholder='Номер почтового ящика',
+                  type='text'
+                )
+
+        fieldset(class=`${mainClass}__fieldset`)
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_12`)
+              h3(class=`${mainClass}__title`) Доставка
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_left`
+              )
+                input.radio.js-delivery(
+                  id=ids[1],
+                  name='delivery',
+                  value='Почта России',
+                  data-id=ids[1],
+                  data-price='600',
+                  type='radio',
+                  checked
+                )
+                label.label(for=ids[1]) Почта России
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_right`
+              )
+                input.radio.js-delivery(
+                  id=ids[2],
+                  name='delivery',
+                  value='EMS',
+                  data-id=ids[2],
+                  data-price='1200',
+                  type='radio'
+                )
+                label.label(for=ids[2]) EMS
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_left`
+              )
+                input.radio.js-delivery(
+                  id=ids[3],
+                  name='delivery',
+                  value='Доставка в Беларусь (Почта России)',
+                  data-id=ids[3],
+                  data-price='1100',
+                  type='radio'
+                )
+                label.label(for=ids[3]) Доставка в Беларусь (Почта России)
+            div(class=`${mainClass}__column ${mainClass}__column_6`)
+              div(
+                class=`${mainClass}__input-wrapper ${mainClass}__input-wrapper_right`
+              )
+                input.radio.js-delivery(
+                  id=ids[4],
+                  name='delivery',
+                  value='Доставка по Москве - ЕМС службой (в пределах МКАД)',
+                  data-id=ids[4],
+                  data-price='600',
+                  type='radio'
+                )
+                label.label(for=ids[4]) Доставка по Москве - ЕМС службой (в пределах МКАД)
+
+        fieldset(class=`${mainClass}__fieldset`)
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_12`)
+              h3(class=`${mainClass}__title`) Стоимость
+          .grid__row
+            div(class=`${mainClass}__column ${mainClass}__column_12`)
+              .div(class=`${mainClass}__table-wrapper js-table`)
+                table.order__table
+                  tr
+                    td Доставка
+                    td
+                    td 600
+                  tr
+                    td Итого
+                    td
+                    td 600
+
+    .grid
+      .grid__row
+        div(class=`${mainClass}__column ${mainClass}__column_12`)
+          footer.footer(class=`${mainClass}__footer`)
+            .footer__content-wrapper
+              input.checkbox.js-terms-switch(
+                id=ids[5],
+                name='terms',
+                type='checkbox'
+              )
+              // prettier-ignore
+              label.label(for=ids[5]) С <a class="link js-page-switch" href="javascript:void(0);" data-page-target=".js-page-terms">условиями</a> согласен
+            +button('Оформить', ['primary', 'disabled']).js-terms-target.js-page-switch(
+              disabled,
+              form=`${mainClass}-form`,
+              type='submit',
+              data-page-target='.js-page-message'
+            )

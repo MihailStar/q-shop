@@ -1,0 +1,150 @@
+.order {
+  padding-top: ($base-unit * 7);
+  padding-bottom: ($base-unit * 7);
+  min-height: 100vh;
+  background-color: $color-body;
+
+  &__column {
+    &_2 {
+      @include grid-col(12 null null 2);
+    }
+
+    &_3 {
+      @include grid-col(12 null null 3);
+    }
+
+    &_4 {
+      @include grid-col(12 null null 4);
+    }
+
+    &_6 {
+      @include grid-col(12 null null 6);
+    }
+
+    &_12 {
+      @include grid-col(12);
+    }
+  }
+
+  &__header {
+    margin-bottom: ($base-unit * 4);
+  }
+
+  &__form {
+    border-radius: ($base-unit * 2);
+    background-color: $color-card;
+  }
+
+  &__fieldset {
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: ($base-unit * 4);
+    padding-right: 0;
+    padding-bottom: ($base-unit * 3);
+    padding-left: 0;
+    border: 0;
+
+    &:not(:last-child) {
+      box-shadow: 0 1px 0 0 $color-line;
+    }
+  }
+
+  &__title {
+    $font-size: ($base-unit * 5);
+    margin-top: 0;
+    margin-bottom: ($base-unit * 1);
+    padding-right: ($base-unit * 4);
+    padding-left: ($base-unit * 4);
+    color: $color-text-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    font-style: normal;
+    font-size: $font-size - 1;
+    font-family: 'Roboto', sans-serif;
+    line-height: ($base-unit * 8 / $font-size * 1em);
+    @include grid-breakpoint(md) {
+      font-size: $font-size;
+    }
+  }
+
+  &__input-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: ($base-unit * 4);
+    padding-right: ($base-unit * 4);
+    padding-left: ($base-unit * 4);
+    @include grid-breakpoint(lg) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &_right {
+      @include grid-breakpoint(lg) {
+        padding-right: ($base-unit * 4);
+      }
+    }
+
+    &_left {
+      @include grid-breakpoint(lg) {
+        padding-left: ($base-unit * 4);
+      }
+    }
+  }
+
+  &__table-wrapper {
+    padding-right: ($base-unit * 4);
+    padding-left: ($base-unit * 4);
+  }
+
+  &__table {
+    margin-bottom: ($base-unit * 4);
+    width: 100%;
+    border-collapse: collapse;
+
+    & tr {
+      $font-size: ($base-unit * 4);
+      box-shadow: 0 1px 0 0 $color-line;
+      color: $color-text-dark;
+      font-weight: 300;
+      font-style: normal;
+      font-size: $font-size;
+      font-family: 'Roboto', sans-serif;
+      line-height: ($base-unit * 6 / $font-size * 1em);
+
+      &:last-child {
+        $font-size: ($font-size + 3);
+        box-shadow: none;
+        font-weight: 500;
+        font-size: $font-size;
+        line-height: ($base-unit * 7 / $font-size * 1em);
+      }
+    }
+
+    & td {
+      padding-top: ($base-unit * 2);
+      padding-right: 0;
+      padding-bottom: ($base-unit * 2);
+      padding-left: 0;
+
+      &:nth-child(1) {
+        width: (100% / 12 * 8);
+      }
+
+      &:nth-child(2) {
+        width: (100% / 12 * 2);
+        text-align: right;
+      }
+
+      &:nth-child(3) {
+        width: (100% / 12 * 2);
+        text-align: right;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: ($base-unit * 4);
+  }
+}

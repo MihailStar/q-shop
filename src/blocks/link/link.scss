@@ -1,0 +1,10 @@
+.link {
+  color: inherit;
+  transition: color $transition-duration;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    color: $color-link;
+  }
+}

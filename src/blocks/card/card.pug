@@ -1,0 +1,23 @@
+mixin card({ id, title, images, description, price, oldPrice }, modifiers = [])
+  -
+    const mainClass = 'card';
+    const classes = [...getClasses(mainClass, modifiers), 'js-card'];
+
+  article(class=classes, data-id=id)&attributes(attributes)
+    div(class=`${mainClass}__image-wrapper`, style='background-color: #ffffff;')
+      img(
+        class=`${mainClass}__image`,
+        srcset=`${images[0]} 1x, ${images[1]} 1.5x`,
+        src=images[0],
+        alt=title
+      )
+    div(class=`${mainClass}__description-wrapper js-card-description`)
+      h3(class=`${mainClass}__title js-card-title`)= title
+      p(class=`${mainClass}__description`)= description
+      div(class=`${mainClass}__price-wrapper`)
+        strong(class=`${mainClass}__price js-card-price`, data-price=price)= `${price}₽`
+        if oldPrice
+          del(class=`${mainClass}__old-price js-card-old-price`)= `${oldPrice}₽`
+    footer(class=`${mainClass}__footer`)
+      +counter
+      strong(class=`${mainClass}__total js-card-total`) —

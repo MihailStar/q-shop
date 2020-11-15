@@ -1,0 +1,24 @@
+mixin counter(modifiers = [])
+  -
+    const mainClass = 'counter';
+    const classes = [...getClasses(mainClass, modifiers), 'js-counter'];
+
+  div(class=classes)&attributes(attributes)
+    +button('Уменьшить', ['icon', 'minus']).js-counter-minus-button(
+      title='Уменьшить',
+      type='button'
+    )
+      +icon('minus')(width='12', height='2')
+    input(
+      class=`${mainClass}__input js-counter-input`,
+      value='0',
+      min='0',
+      max='99',
+      step='1',
+      type='number'
+    )
+    +button('Увеличить', ['icon', 'plus']).js-counter-plus-button(
+      title='Увеличить',
+      type='button'
+    )
+      +icon('plus')(width='12', height='12')

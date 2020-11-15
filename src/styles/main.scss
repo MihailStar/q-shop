@@ -1,0 +1,54 @@
+@import '../../node_modules/fast-grid/_fast-grid';
+
+@import './variables';
+@import './utilities';
+@import './fonts';
+
+body {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.q-shop {
+  box-sizing: border-box;
+
+  & *,
+  & *::before,
+  & *::after {
+    box-sizing: inherit;
+  }
+
+  .grid {
+    min-width: 320px;
+    @include grid-container(sm);
+
+    &__row {
+      @include grid-row();
+    }
+  }
+
+  .visually-hidden {
+    @include visually-hidden();
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  @import '../blocks/button/button';
+  @import '../blocks/card/card';
+  @import '../blocks/checkbox/checkbox';
+  @import '../blocks/counter/counter';
+  @import '../blocks/footer/footer';
+  @import '../blocks/header/header';
+  @import '../blocks/input/input';
+  @import '../blocks/label/label';
+  @import '../blocks/link/link';
+  @import '../blocks/pages/goods/goods';
+  @import '../blocks/pages/message/message';
+  @import '../blocks/pages/order/order';
+  @import '../blocks/pages/terms/terms';
+  @import '../blocks/radio/radio';
+}

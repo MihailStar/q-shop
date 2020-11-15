@@ -1,0 +1,39 @@
+-
+  /**
+   * @param {number} min
+   * @param {number} max
+   * @returns {number}
+   */
+  const getRandomInt = (min, max) => {
+    const randomInt = Math.floor(Math.random() * (max - min)) + min;
+
+    return randomInt;
+  };
+
+  /**
+   * @param {number} [length]
+   * @returns {string}
+   */
+  const getRandomId = (length = 20) => {
+    const chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+    const randomId = Array.from(
+      { length },
+      () => chars[getRandomInt(0, chars.length - 1)]
+    ).join('');
+
+    return randomId;
+  };
+
+  /**
+   * @param {string} mainClass
+   * @param {Array<string>} modifiers
+   * @returns {Array<string>}
+   */
+  const getClasses = (mainClass, modifiers) => {
+    const classesWithModifiers = modifiers.map(
+      (modifier) => `${mainClass}_${modifier}`
+    );
+    const classes = [mainClass, ...classesWithModifiers];
+
+    return classes;
+  };

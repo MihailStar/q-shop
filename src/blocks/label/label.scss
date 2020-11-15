@@ -1,0 +1,9 @@
+.label {
+  $font-size: ($base-unit * 4);
+  color: $color-text-dark;
+  font-weight: 300;
+  font-style: normal;
+  font-size: $font-size;
+  font-family: 'Roboto', sans-serif;
+  line-height: ($base-unit * 6);
+}
